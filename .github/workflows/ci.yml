@@ -1,0 +1,22 @@
+name: CI
+on:
+  push:
+  pull_request:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      GO111MODULE: on
+      GOPATH: /home/runner/work/botkube
+      GOBIN: /home/runner/work/botkube/bin
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Setup Go
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.13
+      - name: testing
+        run: |
+          echo $HOME
+          echo $GOPATH
