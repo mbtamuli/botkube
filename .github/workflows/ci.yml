@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GO111MODULE: on
-      GOPATH: $HOME/work/botkube
-      GOBIN: $HOME/work/botkube/bin
+      GOPATH: ${{HOME}}/work/botkube
+      GOBIN: ${{HOME}}/work/botkube/bin
     steps:
       - name: Checkout
         uses: actions/checkout@v1
