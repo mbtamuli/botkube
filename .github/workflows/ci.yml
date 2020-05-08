@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GO111MODULE: on
-      GOPATH: ${{ github.home }}/work/botkube
-      GOBIN: ${{ github.workspace }}/work/botkube/bin
+      GOPATH: ${{ github.workspace }}
+      GOBIN: ${{ github.workspace }}/bin
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -21,4 +21,5 @@ jobs:
           echo $HOME
           echo $GOPATH
           echo $GOBIN
-          echo ${{ env.HOME }}
+          echo ${{ github.workspace }}
+          echo ${{ github.workspace }}
